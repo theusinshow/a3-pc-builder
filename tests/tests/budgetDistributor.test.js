@@ -1,4 +1,4 @@
-const budgetDistributor = require('/Users/Matheus/Desktop/A3G/pc-builder/services/budgetDistributor');
+const budgetDistributor = require('../../services/budgetDistributor');
 
 describe('Distribuição de Orçamento', () => {
   it('Deve distribuir o orçamento corretamente para Jogos', () => {
