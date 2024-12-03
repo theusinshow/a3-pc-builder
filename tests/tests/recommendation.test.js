@@ -1,4 +1,4 @@
-const recommendationService = require('/Users/Matheus/Desktop/A3G/pc-builder/services/recommendationService');
+const recommendationService = require('../../services/recommendationService');
 
 describe('Recomendação de Componentes', () => {
   it('Deve retornar componentes dentro do orçamento', async () => {

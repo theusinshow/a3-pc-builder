@@ -1,4 +1,4 @@
-const optimizationService = require('/Users/Matheus/Desktop/A3G/pc-builder/services/optimizationService');
+const optimizationService = require('../../services/optimizationService');
 
 describe('Otimização de Componentes', () => {
   it('Deve melhorar os componentes com o orçamento restante', () => {

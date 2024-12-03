@@ -1,4 +1,4 @@
-const db = require('/Users/Matheus/Desktop/A3G/pc-builder/models/db');
+const db = require('../../models/db');
 
 jest.mock('/Users/Matheus/Desktop/A3G/pc-builder/models/db', () => ({
   query: jest.fn(), // Mock da função query
