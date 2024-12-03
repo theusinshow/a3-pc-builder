@@ -16,7 +16,6 @@ exports.getRecommendations = async (budget, profile) => {
     let totalCost = 0;
     const selectedComponents = [];
 
-    // Selecionar componentes sem ultrapassar o orçamento
     for (const component of rows) {
       if (totalCost + component.price <= budget) {
         selectedComponents.push(component);

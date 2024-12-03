@@ -1,6 +1,6 @@
 const db = require('../../models/db');
 
-jest.mock('/Users/Matheus/Desktop/A3G/pc-builder/models/db', () => ({
+jest.mock('../../models/db', () => ({
   query: jest.fn(), // Mock da função query
 }));
 

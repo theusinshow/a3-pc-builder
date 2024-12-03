@@ -1,25 +1,24 @@
-const mysql = require('mysql2/promise');
+const mysql = require('mysql2');
 
 // Configuração da conexão com o MySQL
-const db = mysql.createPool({
+const db = mysql.createConnection({
   host: 'localhost',
-  user: 'root', // Substitua pelo seu usuário do MySQL
-  password: 'Matheus84757289', // Substitua pela sua senha do MySQL
-  database: 'pc_builder', // Nome do banco de dados
-  waitForConnections: true, // Aguarda conexões disponíveis
-  connectionLimit: 10, // Limite máximo de conexões
-  queueLimit: 0, // Sem limite de fila
+  user: 'root',
+  password: 'Matheus84757289',
+  database: 'pc_builder',
 });
 
-// Testar a conexão ao banco de dados
+// Conectar ao banco de dados
 (async () => {
   try {
-    const connection = await db.getConnection();
+    await db.connect();
     console.log('Conexão com o banco de dados estabelecida!');
-    connection.release(); // Libera a conexão para o pool
   } catch (err) {
-    console.error('Erro ao conectar ao banco de dados:', err);
-    process.exit(1);
+    console.error('Erro ao conectar ao banco de dados:', err.message);
+    // Use apenas console.error durante os testes em vez de process.exit(1)
+    if (process.env.NODE_ENV !== 'test') {
+      process.exit(1);
+    }
   }
 })();
 
