@@ -1,0 +1,241 @@
+/* Estilo Geral */
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #000000, #1a1a1a);
+  color: #ffffff;
+  font-family: 'JetBrains Mono', monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Contêiner Principal */
+.container {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* Logo */
+.logo img {
+  width: 400px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* Títulos */
+.title, .recommendation-title {
+  font-size: 2.5rem;
+  color: #b15ff5;
+  margin-bottom: 50px;
+}
+
+/* Botões */
+.start-button, .button, .submit-button {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border: 2px solid #3a003a;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.start-button:hover, .button:hover, .submit-button:hover {
+  background-color: #333333;
+  border-color: #b15ff5;
+  transform: scale(1.05);
+}
+
+.start-button:active, .button:active, .submit-button:active {
+  transform: scale(0.95);
+}
+
+/* Formulários */
+.input, .configuration-input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 1rem;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.input:focus, .configuration-input:focus {
+  border-color: #b15ff5;
+  box-shadow: 0 0 5px rgba(177, 89, 245, 0.8);
+}
+
+/* Labels */
+.label, .configuration-label {
+  font-size: 1.2rem;
+  color: #ffffff;
+  text-align: left;
+}
+
+/* Perfil de Uso */
+.profile-section {
+  text-align: left;
+}
+
+.profile-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profile-options label {
+  font-size: 1rem;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.profile-options input[type="radio"] {
+  margin-right: 10px;
+  accent-color: #b15ff5;
+}
+
+.profile-options input[type="radio"]:checked + label {
+  background-color: rgba(177, 89, 245, 0.1);
+  color: #b15ff5;
+  border: 2px solid #b15ff5;
+  box-shadow: 0 0 5px rgba(177, 89, 245, 0.8);
+}
+
+/* Página de Configuração */
+.configuration-container {
+  background: rgba(26, 26, 26, 0.9);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  width: 80%;
+  max-width: 600px;
+}
+
+.configuration-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #b15ff5;
+}
+
+.configuration-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Tabelas */
+.result-table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.result-table th, .result-table td {
+  padding: 15px;
+  border: 1px solid #3a003a;
+}
+
+.result-table th {
+  background-color: #3a003a;
+  color: #ffffff;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.result-table td {
+  background-color: #2a2a2a;
+  color: #cccccc;
+}
+
+.result-table tr:hover td {
+  background-color: #3a003a;
+  color: #ffffff;
+}
+
+/* Resumo */
+.summary {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+.summary p {
+  margin: 10px 0;
+}
+
+.summary strong {
+  color: #b15ff5;
+}
+
+/* Rodapé Animado */
+.footer-marquee {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #1a1a1a;
+  color: #b15ff5;
+  font-size: 1.2rem;
+  overflow: hidden;
+  white-space: nowrap;
+  z-index: 9999;
+}
+
+.footer-marquee span {
+  display: inline-block;
+  padding: 10px 0;
+  animation: scroll-left 20s linear infinite;
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Barra de Energia */
+.moving-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(90deg, rgba(179, 89, 255, 0.8), rgba(255, 255, 255, 0.5), rgba(179, 89, 255, 0.8));
+  background-size: 300% 100%;
+  animation: energy-flow 6s linear infinite alternate;
+  z-index: -1;
+}
+
+@keyframes energy-flow {
+  from {
+    background-position: 0% 0%;
+  }
+  to {
+    background-position: 100% 0%;
+  }
+}
